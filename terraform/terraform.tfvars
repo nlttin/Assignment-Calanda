@@ -1,0 +1,6 @@
+subscription_id     = "636fd4b7-a323-4ce0-979d-9afb07136d1c"
+resource_group_name = "devops-latency-test"
+location            = "southeastasia"
+vm_size             = "Standard_B1s"
+admin_username      = "azureuser"
+ssh_public_key_path = "~/.ssh/id_rsa.pub"
