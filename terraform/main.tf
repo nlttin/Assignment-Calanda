@@ -70,9 +70,10 @@ resource "azurerm_network_security_group" "nsg" {
 resource "azurerm_public_ip" "pip" {
   count               = 2
   name                = "pip-${count.index}"
-  location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   allocation_method   = "Static"
+  sku                 = "Standard"    
 }
 
 resource "azurerm_network_interface" "nic" {
@@ -118,8 +119,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-focal"
-    sku       = "20_04-lts"
+    offer     = "ubuntu-24_04-lts"
+    sku       = "server"
     version   = "latest"
   }
 
